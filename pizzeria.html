@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Krusboda Pizzeria </title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="CSS_Hem.css">
+</head>
+
+<body>
+    <header>
+        <div class="text">
+            <h1> Krusboda <br> Pizzeria </h1>
+            <p style="color:white">Välkommen</p>
+        </div>
+        <div class="navbar">
+            <button> <a href="#hem" style="font-size: 15pt;"> <b> Hem </b></a></button>
+        </div>
+        <div class="onavbar">
+            <button><a href="#kontakt"> <b> ÖPPETTIDER & KONTAKT
+                    </b></a></button>
+            <button class="btn" onclick="seeMenu()"><a class="btn"> <b class="btn"> MENY </b></a></button>
+        </div>
+        <img class="header" src="https://krusbodapizzeria.com/img/pizza-home-large.jpg">
+        <div class="menu" id="menu">
+            <a href="Meny.html#prisklass1">PIZZA - PRISKLASS I</a>
+            <a href="Meny.html#prisklass2">PIZZA - PRISKLASS II</a>
+            <a href="Meny.html#vegetariskapizzor">VEGETARISKA PIZZOR</a>
+            <a href="Meny.html#kebabpizzor">KEBAB PIZZOR</a>
+            <a href="Meny.html#mexikanskapizzor">MEXIKANSKA PIZZOR</a>
+            <a href="Meny.html#specialpizzor">SPECIALPIZZOR</a>
+            <a href="Meny.html#inbakadepizzor">INBAKADE PIZZOR</a>
+            <a href="Meny.html#veganpizzor">VEGANPIZZOR</a>
+            <a href="Meny.html#gourmetpizzor">GOURMET PIZZOR</a>
+            <a href="Meny.html#amerikanskapizzor">AMERIKANSKA PIZZOR</a>
+            <a href="Meny.html#bagarensspecialpizzor">BAGARENS SPECIALPIZZOR</a>
+
+        </div>
+
+    </header>
+    <nav>
+        <div class="container">
+            <h2> Erbjuder lunch för 105:- </h2>
+            <p> Pizza nr 1-16, sallad (valfri). Kebab- och gyrosrätter - Falafel - Pasta 1-4. Inkl. Bröd, smör, </p>
+            <p> dryck & kaffe. </p>
+        </div>
+        <div class="container">
+            <p><a name="kontakt"></a></p>
+            <h2>Öppettider & kontakt </h2>
+            <p> <b> Tel: </b> <a style="display: inline;" href="tel:087121817">08-712 18 17</a> </p>
+            <p><b> ÖPPETTIDER</b> </p>
+            <p>Måndag – Fredag 11:00 – 21:00</p>
+            <p>Lördag – Söndag 12:00 – 21:00</p>
+            <p><b> Lunch </b></p>
+            <p>Måndag – Fredag 11:00 – 14:00</p>
+            <p> <b> ADRESS </b> </p>
+            <p>Krusboda torg 1, Tyresö</p>
+
+        </div>
+
+        </div>
+        <footer class="footer">
+            Copyright © Krusboda Pizzeria 2022
+        </footer>
+
+    </nav>
+    <script>
+        function seeMenu() {
+            if (document.getElementById("menu").style.display == "none") {
+                document.getElementById("menu").style = "display:block";
+            } else {
+                document.getElementById("menu").style = "display:none";
+            }
+
+        }
+        window.onclick = function (event) {
+            if (!event.target.matches('.btn')) {
+                var dropdowns = document.getElementById("menu");
+                if (dropdowns.style.display == "block") {
+                    dropdowns.style = "display:none";
+                }
+
+
+            }
+        }
+    </script>
+</body>
+
+</html>
