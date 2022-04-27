@@ -44,8 +44,12 @@ h1 {
 
 a {
     text-decoration: none;
-    color: #777
+    color: #777;
+    display: block;
+    padding-top: 25px;
+
 }
+
 
 .footer {
     margin-left: auto;
@@ -89,7 +93,7 @@ a {
     font-family: Lora, 'Times New Roman', serif;
 }
 
-button{
+button {
     margin: 5px;
     background-color: transparent;
     border: none;
@@ -105,12 +109,6 @@ button{
     font-size: 10pt;
     font-family: Lora, 'Times New Roman', serif;
     font-weight: bolder;
-
-}
-
-a {
-    display: block;
-    padding-top: 25px;
 
 }
 

@@ -1,134 +1,14 @@
-.header {
-    width: 1300px;
-    height: 600px;
-    margin-top: -80px;
-    margin-left: -10px;
-    margin-right: auto;
-    margin-bottom: 50px;
-    position: relative;
-    z-index: 0;
-}
-
-h2 {
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 800;
-    font-size: 30px;
-    color: #333;
-    line-height: 0.5;
-}
-
-h3 {
-    font-family: Lora, 'Times New Roman', serif;
-    line-height: 0.5;
-    color: #777;
-    font-size: 20px;
-}
-
-h3 {
-    line-height: 3;
-}
-
-h1 {
-    font-size: 80px;
-    font-family: Lora, 'Times New Roman', serif;
-}
-
-.container {
-    margin-left: 20%;
-    margin-right: 25%;
-    border-bottom: solid 1px rgb(231, 228, 228);
-    width: 750px;
-    padding-bottom: 15px;
-}
-
-a {
-    text-decoration: none;
-    color: #777
-}
-
-.footer {
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    font-size: 14px;
-    text-align: center;
-    color: #777;
-    font-family: Lora, 'Times New Roman', serif;
-}
-
-.text {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    z-index: 1;
-    color: white;
-    text-align: center;
-    line-height: 1;
-    transform: translate(-50%, -50%);
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 50px;
-
-}
-
-.navbar {
-    position: absolute;
-    top: 10px;
-    left: 45px;
-    z-index: 1;
-    color: #A0A0A0;
-    font-size: 14pt;
-    font-family: Lora, 'Times New Roman', serif;
-
-}
-
-.onavbar {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 1;
-    color: #A0A0A0;
-    font-size: 12pt;
-    font-family: Lora, 'Times New Roman', serif;
-}
-
-button {
-    margin: 5px;
-    background-color: transparent;
-    border: none;
-}
-
-.menu {
-    display: none;
-    position: absolute;
-    right: 20px;
-    top: 45px;
-    text-align: right;
-    color: #A0A0A0;
-    font-size: 10pt;
-    font-family: Lora, 'Times New Roman', serif;
-    font-weight: bolder;
-
-}
-
-a {
-    display: block;
-    padding-top: 25px;
-
-}
-
-button a:hover {
-    color: #A0A0A0;
-}
-
 .pizza {
     text-align: center;
+    padding-top: 0px;
 }
 
 p {
     color: black;
     text-align: center;
     line-height: 1;
+    font-family: Lora, 'Times New Roman', serif;
+    font-size: 12pt;
 
 }
 
