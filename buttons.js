@@ -20,6 +20,7 @@ function seeMenu() {
     }
     //screen size<768px
     function seeLittleMenu() {
+        var display=getComputedStyle(document.getElementById("littlemenu")).display;
         if (document.getElementById("littlemenu").style.display == "none") {
             document.getElementById("littlemenu").style = "display:block";
         } else {
@@ -39,6 +40,7 @@ function seeMenu() {
     }
     //screen size<768px
     function seeTooLittleMenu() {
+        var display=getComputedStyle(document.getElementById("toolittlemenu")).display;
         if (document.getElementById("toolittlemenu").style.display == "none") {
             document.getElementById("toolittlemenu").style = "display:block";
         } else {
