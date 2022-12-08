@@ -2,7 +2,9 @@ body {
     margin-right: 0;
     margin-left: 0;
     width: 100%;
+    height:100%;
 }
+html{height:100%;}
 
 
 
@@ -82,7 +84,7 @@ a {
 
 
 button {
-    margin: 5px;
+    margin: 2px;
     background-color: transparent;
     border: none;
     display: flex;
@@ -168,7 +170,16 @@ a:hover {
     display: flex
 }
 
+.basket {
+    width: 50px;
+    z-index: 1;
+    margin-top: 5%;
+}
 
+.littleBasket {
+    width: 40px;
+    margin-top: 3%;
+}
 
 @media only screen and (max-width:768px) {
     .topnav {
@@ -268,4 +279,8 @@ a:hover {
     a:hover {
         color: #A0A0A0;
     }
-.contact {padding: 5px;}
+
+    .contact {
+        padding: 5px;
+    }
+}

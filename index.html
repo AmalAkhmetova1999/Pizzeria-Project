@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="main.css">
     <script src="buttons.js">
     </script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js "></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js "></script>
 </head>
 
 <body>
@@ -30,29 +33,17 @@
                             </b></a></button>
                     <button class="btn little" onclick="seeMenu()"><a class="btn" href="#meny"> MENY
                         </a></button>
+                    <button><img class="basket" src="basket.png"></button>
                 </div>
                 <div class="hidden">
                     <button class="btn little" onclick="seeLittleMenu()"><a class="btn" href="#meny"> MENY
                         </a></button>
+                    <button><img class=" littleBasket" src="basket.png"></button>
                 </div>
             </div>
         </div>
-        <img class="header img-fluid" src="https://krusbodapizzeria.com/img/pizza-home-large.jpg"
-            alt="pizza Tyreso Stockholm">
-        <div class="menu" id="menu">
-            <a href="Meny.html#prisklass1">PIZZA - PRISKLASS I</a>
-            <a href="Meny.html#prisklass2">PIZZA - PRISKLASS II</a>
-            <a href="Meny.html#vegetariskapizzor">VEGETARISKA PIZZOR</a>
-            <a href="Meny.html#kebabpizzor">KEBAB PIZZOR</a>
-            <a href="Meny.html#mexikanskapizzor">MEXIKANSKA PIZZOR</a>
-            <a href="Meny.html#specialpizzor">SPECIALPIZZOR</a>
-            <a href="Meny.html#inbakadepizzor">INBAKADE PIZZOR</a>
-            <a href="Meny.html#veganpizzor">VEGANPIZZOR</a>
-            <a href="Meny.html#gourmetpizzor">GOURMET PIZZOR</a>
-            <a href="Meny.html#amerikanskapizzor">AMERIKANSKA PIZZOR</a>
-            <a href="Meny.html#bagarensspecialpizzor">BAGARENS SPECIALPIZZOR</a>
-
-        </div>
+        <img class="header img-fluid" src="pizz.jpg" alt="pizza Tyreso Stockholm">
+        <div class="menu" id="menu"></div>
         <div class="littlemenu" id="toolittlemenu">
             <li><a href="Meny.html#prisklass1">PIZZA - PRISKLASS I</a></li>
             <li><a href="Meny.html#prisklass2">PIZZA - PRISKLASS II</a></li>
@@ -100,6 +91,52 @@
     <footer class="footer">
         Copyright © Krusboda Pizzeria 2022
     </footer>
+    <script type="text/babel">
+        const Pizz=[{pizza: "PIZZA - PRISKLASS I",
+    href:"Meny.html#prisklass1"},
+        {pizza: "PIZZA - PRISKLASS II",
+    href:"Meny.html#prisklass2"},
+        {pizza: "KEBAB PIZZOR",
+    href:"Meny.html#kebabpizzor"},
+        {pizza: "MEXIKANSKA PIZZOR",
+    href:"Meny.html#mexikanskapizzor"},
+        {pizza: "VEGETARISKA PIZZOR",
+    href:"Meny.html#vegetariskapizzor"},
+        {pizza: "SPECIALPIZZOR",
+    href:"Meny.html#specialpizzor"},
+        {pizza: "INBAKADE PIZZOR",
+    href:"Meny.html#inbakadepizzor"},
+        {pizza: "VEGANPIZZOR",
+    href:"Meny.html#veganpizzor"},
+        {pizza: "GOURMET PIZZOR",
+    href:"Meny.html#gourmetpizzor"
+    },
+        {pizza: "AMERIKANSKA PIZZOR",
+    href:"Meny.html#amerikanskapizzor"
+    },
+        {pizza: "BAGARENS SPECIALPIZZOR",
+    href:"Meny.html#bagarensspecialpizzor"
+    }]
+
+        function PizzaMenu(props) {
+  return (
+    <div>
+     <a href={props.href}>{props.pizza}</a>
+    </div>
+  );
+}
+function AppTwo(){
+return(
+<div>
+    {Pizz.map((pizza)=>{
+return(
+<PizzaMenu pizza={pizza.pizza} href={pizza.href} />
+); })}
+    </div>
+);
+}
+ReactDOM.render(<AppTwo/>, document.getElementById('menu'))
+    </script>
 </body>
 
 </html>

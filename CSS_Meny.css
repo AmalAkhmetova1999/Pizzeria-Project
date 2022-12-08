@@ -1,4 +1,4 @@
-pizza {
+.pizza {
     text-align: center;
 
 }
@@ -39,3 +39,111 @@ p {
 
 h2 {
     text-align: center;
+}
+
+.minus {
+    cursor: pointer;
+    width: 10px;
+    float: left;
+    margin-left: 10%;
+    text-align: center;
+
+}
+
+.plus {
+    cursor: pointer;
+    width: 10px;
+    float: right;
+    margin-right: 10%;
+    text-align: center;
+}
+
+.inp_price {
+    width: 30px;
+    text-align: center;
+    border: none;
+    background-color: rgba(240, 189, 127, 0.936);
+
+}
+
+.count_box {
+    width: 100px;
+    border: 1.5px solid rgb(245, 178, 95);
+    display: inline-block;
+    background-color: rgba(240, 189, 127, 0.936);
+    border-radius: 5px;
+}
+
+.varukorg {
+    font-size: 7pt;
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgb(245, 178, 95);
+    width: 100px;
+}
+
+.popup {
+    background-color: white;
+    width: 35%;
+    position: fixed;
+    right: 0;
+    top: 10%;
+    z-index: 5;
+    height: 70vh;
+    border-radius: 5% 0% 0% 5%;
+    display: none;
+}
+
+.po {
+    background-color: rgb(246, 224, 186);
+    border: 1px solid black;
+    width: 65%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td,
+th {
+    border: 1px solid black;
+}
+
+
+.varukorgText {
+    margin-top: 10%;
+    text-align: center;
+    line-height: 30px
+}
+
+.varukorgImg {
+    width: 200px;
+    margin-left: 30%;
+    margin-top: 10%
+}
+
+@media only screen and (max-width:768px) {
+    .popup {
+        width: 100%;
+        top: 0;
+        height: 30vh;
+        border-radius: 0% 0% 0% 0%;
+        display: none;
+    }
+
+    .varukorgText {
+        text-align: center;
+        line-height: 20px;
+        margin-top: 1.5%;
+        font-size: 14pt;
+    }
+
+    .varukorgImg {
+        width: 110px;
+        text-align: center;
+        margin-left: 45%;
+        margin-top: 2%;
+
+    }
+}

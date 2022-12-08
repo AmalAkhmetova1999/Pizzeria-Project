@@ -13,32 +13,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="CSS_Meny.css">
-    <script src="buttons.js">
+    <script src="buttons.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="application/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js">
+
     </script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js "></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js "></script>
+    
 </head>
 
-<body>
+<body onload="addDIV()">
     <header>
-        <div class="text col-md-12">
-            <h1> Meny </h1>
-        </div>
-        <div class="topnav">
-            <a href="index.html" style="font-size: 12pt;"> <b> Hem </b></a>
-            <div class="topnav-right">
-                <div class="big">
-                    <button><a href="index.html#kontakt"> <b> ÖPPETTIDER & KONTAKT
-                            </b></a></button>
-                    <button class="btn little" onclick="seeMenu()"><a class="btn" href="#meny"> MENY
-                        </a></button>
-                </div>
-                <div class="hidden">
-                    <button class="btn little" onclick="seeLittleMenu()"><a class="btn" href="#meny"> MENY
-                        </a></button>
-                </div>
-            </div>
-        </div>
-        <img class="img-fluid header" src="https://krusbodapizzeria.com/img/pizza-home-large.jpg"
-            alt="pizza Tyreso Stockholm">
+        <div id="root"></div>
 
         <div class="menu" id="menu">
             <a href="#prisklass1">PIZZA - PRISKLASS I</a>
@@ -53,6 +42,11 @@
             <a href="#amerikanskapizzor">AMERIKANSKA PIZZOR</a>
             <a href="#bagarensspecialpizzor">BAGARENS SPECIALPIZZOR</a>
 
+        </div>
+        <div class="popup" id="popup">
+            <img class="varukorgImg" src="17249115.jpg" id="popImage">
+            <h3 class="col-12 varukorgText" id="popText">Tyvärr, <br>din varukorg är
+                tom</h3>
         </div>
         <div class="littlemenu" id="toolittlemenu">
             <li><a href="#prisklass1">PIZZA - PRISKLASS I</a></li>
@@ -79,8 +73,8 @@
                         </a></button></li>
 
             </ul>
-
         </div>
+
         <div class="pizza">
             <p><a name="prisklass1"></a></p>
             <h2> PIZZA - PRISKLASS I </h2>
@@ -88,81 +82,82 @@
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>1. MARGHERITA, 100,00 :-</p>
+                <p class="cook">1. MARGHERITA, 100,00 :-</p>
                 <p> Tomat, ost</p>
             </div>
+
             <div class="col-md-6 pad">
-                <p>2. VESUVIO, 100,00 :-</p>
+                <p class="cook1">2. VESUVIO, 100,00 :-</p>
                 <p>Skinka</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>3. AL FUNGHI, 100,00 :-</p>
+                <p class="cook2">3. AL FUNGHI, 100,00 :-</p>
                 <p> Champinjoner</p>
             </div>
             <div class="col-md-6 pad">
-                <p>4. AL TONNO, 100,00 :-</p>
+                <p class="cook3">4. AL TONNO, 100,00 :-</p>
                 <p>Tonfisk, lök</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>5. BUSSOLA, 100,00 :-</p>
+                <p class="cook4">5. BUSSOLA, 100,00 :-</p>
                 <p> Skinka, räkor</p>
             </div>
             <div class="col-md-6 pad">
-                <p>6. OPERA, 100,00 :-</p>
+                <p class="cook5">6. OPERA, 100,00 :-</p>
                 <p> Skinka, tonfisk</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>7. HAWAII, 100,00 :-</p>
+                <p class="cook6">7. HAWAII, 100,00 :-</p>
                 <p> Skinka, ananas</p>
             </div>
             <div class="col-md-6 pad">
-                <p>8. TROPICANA, 100,00 :-</p>
+                <p class="cook7">8. TROPICANA, 100,00 :-</p>
                 <p> Skinka, banan, curry</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>9. MARINARA, 100,00 :-</p>
+                <p class="cook8">9. MARINARA, 100,00 :-</p>
                 <p> Räkor, musslor</p>
             </div>
             <div class="col-md-6 pad">
-                <p>10. CAPRICCIOSA, 100,00 :-</p>
+                <p class="cook9">10. CAPRICCIOSA, 100,00 :-</p>
                 <p> Skinka, champinjoner</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>11. CARIDES, 100,00 :-</p>
+                <p class="cook10">11. CARIDES, 100,00 :-</p>
                 <p>Räkor, champinjoner</p>
             </div>
             <div class="col-md-6 pad">
-                <p>12. CAMPAGNOLA, 100,00 :-</p>
+                <p class="cook11">12. CAMPAGNOLA, 100,00 :-</p>
                 <p>Salami, lök</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>13. POMPEI, 100,00 :-</p>
+                <p class="cook12">13. POMPEI, 100,00 :-</p>
                 <p> Bacon, lök, ägg</p>
             </div>
             <div class="col-md-6 pad">
-                <p>14. ORIENTALE, 100,00 :-</p>
+                <p class="cook13">14. ORIENTALE, 100,00 :-</p>
                 <p> Stekt köttfärs, lök</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>15. KANON, 100,00 :-</p>
+                <p class="cook14">15. KANON, 100,00 :-</p>
                 <p>Salami, bacon, ägg</p>
             </div>
             <div class="col-md-6 pad">
-                <p>16. NAPOLITANA, 100,00 :-</p>
+                <p class="cook15">16. NAPOLITANA, 100,00 :-</p>
                 <p>Sardeller, oliver</p>
             </div>
         </div>
@@ -173,81 +168,81 @@
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>17. QUATTRO STAGIONE, 110,00 :-</p>
+                <p class="cook16">17. QUATTRO STAGIONE, 110,00 :-</p>
                 <p> Skinka, räkor, champinjoner, musslor, kronärtskocka, oliver</p>
             </div>
             <div class="col-md-6 pad">
-                <p>18. ITALIA, 110,00 :-</p>
+                <p class="cook17">18. ITALIA, 110,00 :-</p>
                 <p>Skinka, räkor, champinjoner</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>19. GORGONZOLA, 110,00 :-</p>
+                <p class="cook18">19. GORGONZOLA, 110,00 :-</p>
                 <p> Skinka, gorgonzola</p>
             </div>
             <div class="col-md-6 pad">
-                <p>20. HAVET, 110,00 :-</p>
+                <p class="cook19">20. HAVET, 110,00 :-</p>
                 <p>Räkor, musslor, tonfisk</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>21. FÅROSTPIZZA, 110,00 :-</p>
+                <p class="cook20">21. FÅROSTPIZZA, 110,00 :-</p>
                 <p> Fårost, färsk tomat, lök, paprika, salami, oliver</p>
             </div>
             <div class="col-md-6 pad">
-                <p>22. LEONARDO, 110,00 :-</p>
+                <p class="cook21">22. LEONARDO, 110,00 :-</p>
                 <p>Tomat, ost, skinka, salami, bacon, lök, bearnaisesås</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>23. VERA, 110,00 :-</p>
+                <p class="cook22">23. VERA, 110,00 :-</p>
                 <p>Tomat, ost, skinka, champinjoner, lök, räkor, paprika</p>
             </div>
             <div class="col-md-6 pad">
-                <p>24. HUSETS SPECIAL, 110,00 :-</p>
+                <p class="cook23">24. HUSETS SPECIAL, 110,00 :-</p>
                 <p>Tomat, (ost gratinerad), skinka, champinjoner, räkor, lök, paprika</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>25. KYCKLINGPIZZA, 110,00 :-</p>
+                <p class="cook24">25. KYCKLINGPIZZA, 110,00 :-</p>
                 <p>Kyckling, jordnötter, banan, ananas, curry</p>
             </div>
             <div class="col-md-6 pad">
-                <p>26. MÄSTAREN, 110,00 :-</p>
+                <p class="cook25">26. MÄSTAREN, 110,00 :-</p>
                 <p> Gorgonzolaost, räkor, stekt köttfärs, färsk paprika, lök, färska tomater</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>27. STRINDBERG, 110,00 :-</p>
+                <p class="cook26">27. STRINDBERG, 110,00 :-</p>
                 <p>Stekt köttfärs, färska champinjoner, färsk paprika, lök, bacon, ägg (starkt kryddad)</p>
             </div>
             <div class="col-md-6 pad">
-                <p>28. PICASSO, 110,00 :-</p>
+                <p class="cook27">28. PICASSO, 110,00 :-</p>
                 <p>Pepperonikorv, mozzarellaost, färska tomater, färsk paprika, lök</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>29. PARADISO, 110,00 :-</p>
+                <p class="cook28">29. PARADISO, 110,00 :-</p>
                 <p>Kyckling, lök, champinjoner, curry</p>
             </div>
             <div class="col-md-6 pad">
-                <p>30. MAMA MIA, 110,00 :-</p>
+                <p class="cook29">30. MAMA MIA, 110,00 :-</p>
                 <p>Lök, stekt köttfärs, paprika, salami</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>31. TUTTI FRUTTI, 110,00 :-</p>
+                <p class="cook30">31. TUTTI FRUTTI, 110,00 :-</p>
                 <p>Skinka, banan, ananas, curry</p>
             </div>
             <div class="col-md-6 pad">
-                <p>32. NOAS, 110,00 :-</p>
+                <p class="cook31">32. NOAS, 110,00 :-</p>
                 <p>Räkor, färsk vitlök, färsk persilja</p>
             </div>
         </div>
@@ -258,31 +253,31 @@
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>33. BARI, 110,00 :-</p>
+                <p class="cook32">33. BARI, 110,00 :-</p>
                 <p>Zucchini, aubergine, spenat, soltorkade tomater, ruccola</p>
             </div>
             <div class="col-md-6 pad">
-                <p>34. BRESCIA, 110,00 :-</p>
+                <p class="cook33">34. BRESCIA, 110,00 :-</p>
                 <p>Aubergine, paprika, champinjoner. zucchini, tomater, vitlök, oliver, fetaost</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>35. QUATTRO FORMAGGI, 110,00 :-</p>
+                <p class="cook34">35. QUATTRO FORMAGGI, 110,00 :-</p>
                 <p>Mozzarella, fetaost, gorgonzola</p>
             </div>
             <div class="col-md-6 pad">
-                <p>36. VEGETARIANA, 110,00 :-</p>
+                <p class="cook35">36. VEGETARIANA, 110,00 :-</p>
                 <p>Lök, paprika, kronärtskocka, oliver, champinjoner</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>37. RUCCOLA, 110,00 :-</p>
+                <p class="cook36">37. RUCCOLA, 110,00 :-</p>
                 <p>Mozzarellaost, ruccola, havssalt, olivolja</p>
             </div>
             <div class="col-md-6 pad">
-                <p>38. PRINSESSA, 110,00 :-</p>
+                <p class="cook37">38. PRINSESSA, 110,00 :-</p>
                 <p>Mozzarella, fårost, honung, valnötter, ruccola</p>
             </div>
         </div>
@@ -293,17 +288,17 @@
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>39. KEBABPIZZA, 120,00 :-</p>
+                <p class="cook38">39. KEBABPIZZA, 120,00 :-</p>
                 <p>Kebabkött, isbergssallad, lök, tomater, fefferoni, vitlökssås, mild sås</p>
             </div>
             <div class="col-md-6 pad">
-                <p>40. VIKING KEBAB (INBAKAD), 120,00 :-</p>
+                <p class="cook39">40. VIKING KEBAB (INBAKAD), 120,00 :-</p>
                 <p>Lök, tomater, fefferoni, isbergssallad, kebabkött, vitlökssås, mild sås</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>41. GYROS PIZZA, 120,00 :-</p>
+                <p class="cook40">41. GYROS PIZZA, 120,00 :-</p>
                 <p>Gyros, isbergssallad, lök, tomater, fefferoni, vitlökssås, mild sås</p>
             </div>
         </div>
@@ -314,27 +309,27 @@
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>42. MEXICANA, 115,00 :-</p>
+                <p class="cook41">42. MEXICANA, 115,00 :-</p>
                 <p>Stekt köttfärssås, lök, jalapeño, tacosås, tacokryddmix, färsk vitlök, grön chili</p>
             </div>
             <div class="col-md-6 pad">
-                <p>43. AZTEKA, 115,00 :-</p>
+                <p class="cook42">43. AZTEKA, 115,00 :-</p>
                 <p>Skinka, jalapeño, tacosås, tacokryddmix, vitlökssås eller gräddfil</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>44. DEN GODE, 115,00 :-</p>
+                <p class="cook43">44. DEN GODE, 115,00 :-</p>
                 <p>Lök, jalapeño, kyckling, tacosås, tacokryddmix, färsk vitlök, grön chili</p>
             </div>
             <div class="col-md-6 pad">
-                <p>45. DEN ONDE, 115,00 :-</p>
+                <p class="cook44">45. DEN ONDE, 115,00 :-</p>
                 <p>Fläskfilé, lök, paprika, jalapeño, färsk tomat, bearnaisesås</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>46. ACAPULCO, 115,00 :-</p>
+                <p class="cook45">46. ACAPULCO, 115,00 :-</p>
                 <p>Oxfilé, lök, färska champinjoner, jalapeño, tacosås, tacokryddmix, färsk vitlök</p>
             </div>
         </div>
@@ -345,51 +340,51 @@
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p> 47. DI MARE, 115,00 :-</p>
+                <p class="cook46"> 47. DI MARE, 115,00 :-</p>
                 <p>Scampi, räkor, musslor, färsk vitlök</p>
             </div>
             <div class="col-md-6 pad">
-                <p>48. NAPOLI, 115,00 :-</p>
+                <p class="cook47">48. NAPOLI, 115,00 :-</p>
                 <p>Skinka, färska champinjoner, köttfärs, lök, paprika, bacon, peperonikorv, salami</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>49. KRUSBODA SPECIAL, 115,00 :-</p>
+                <p class="cook48">49. KRUSBODA SPECIAL, 115,00 :-</p>
                 <p> Oxfilé, färsk paprika, färska champinjoner, färska tomater, räkor, bearnaisesås</p>
             </div>
             <div class="col-md-6 pad">
-                <p>50. SLÅNBÄRS, 115,00 :-</p>
+                <p class="cook49">50. SLÅNBÄRS, 115,00 :-</p>
                 <p>Oxfilé, jordnötter, banan, ananas, curry, bearnaisesås</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>51. ESKO, 115,00 :-</p>
+                <p class="cook50">51. ESKO, 115,00 :-</p>
                 <p>Oxfilé, lök, färska champinjoner, gorgonzolaost</p>
             </div>
             <div class="col-md-6 pad">
-                <p>52. LÄKARENS (HALVINBAKAD), 115,00 :-</p>
+                <p class="cook51">52. LÄKARENS (HALVINBAKAD), 115,00 :-</p>
                 <p>Oxfilé, lök, färska champinjoner, färsk paprika, bearnaisesås</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>53. CIAO CIAO, 115,00 :-</p>
+                <p class="cook52">53. CIAO CIAO, 115,00 :-</p>
                 <p>Oxfilé, färska tomater, färska champinjoner, lök, bearnaisesås</p>
             </div>
             <div class="col-md-6 pad">
-                <p>54. PIZZAMIX, 115,00 :-</p>
+                <p class="cook53">54. PIZZAMIX, 115,00 :-</p>
                 <p>Oxfilé, fläskfilé, lök, färska champinjoner, bearnaisesås</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>55. SJUKSKÖTERSKANS, 115,00 :-</p>
+                <p class="cook54">55. SJUKSKÖTERSKANS, 115,00 :-</p>
                 <p>Fläskfilé, bearnaisesås, lök, färska champinjoner</p>
             </div>
             <div class="col-md-6 pad">
-                <p>56. ELDORADO, 115,00 :-</p>
+                <p class="cook55">56. ELDORADO, 115,00 :-</p>
                 <p>Fläskfilé, ananas, jordnötter, banan, curry, bearnaisesås</p>
             </div>
         </div>
@@ -399,20 +394,20 @@
         </div>
         <div class="row">
             <div class="col-md-6 pad">
-                <p>57. CALZONE, 104,00 :-</p>
+                <p class="cook56">57. CALZONE, 104,00 :-</p>
                 <p>Skinka</p>
             </div>
             <div class="col-md-6 pad">
-                <p>58. CALZONE SPECIAL, 110,00 :-</p>
+                <p class="cook57">58. CALZONE SPECIAL, 110,00 :-</p>
                 <p>Skinka, räkor, champinjoner</p>
             </div>
             <div class="row">
                 <div class="col-md-6 pad">
-                    <p>59. FLYGANDE TEFAT (DUBBELINBAKAD), 115,00 :-</p>
+                    <p class="cook58">59. FLYGANDE TEFAT (DUBBELINBAKAD), 115,00 :-</p>
                     <p>Skinka, räkor, champinjoner</p>
                 </div>
                 <div class="col-md-6 pad">
-                    <p>60. DUBBEL CALZONE, 115,00 :-</p>
+                    <p class="cook59">60. DUBBEL CALZONE, 115,00 :-</p>
                     <p>Skinka</p>
                 </div>
             </div>
@@ -423,11 +418,11 @@
             </div>
             <div class="row">
                 <div class="col-md-6 pad">
-                    <p>HAWAIII, 125,00 :-</p>
+                    <p class="cook60">HAWAIII, 125,00 :-</p>
                     <p>Veganost, veganskinka, ananas</p>
                 </div>
                 <div class="col-md-6 pad">
-                    <p>CAPRICCIOSA, 125,00 :-</p>
+                    <p class="cook61">CAPRICCIOSA, 125,00 :-</p>
                     <p>Veganost, veganskinka, champinjoner</p>
                 </div>
             </div>
@@ -438,11 +433,11 @@
             </div>
             <div class="row">
                 <div class=" col-md-6 pad">
-                    <p>1. LE CHEF, 115,00 :-</p>
+                    <p class="cook62">1. LE CHEF, 115,00 :-</p>
                     <p>Mozarellaost, parmaskinka, oliver, färska tomater, ruccola</p>
                 </div>
                 <div class="col-md-6 pad">
-                    <p>2. MEZZA LUNA (HALVINBAKAD), 115,00 :-</p>
+                    <p class="cook63">2. MEZZA LUNA (HALVINBAKAD), 115,00 :-</p>
                     <p>I den inbakade delen: mozzarellaost, parmaskinka. I andra delen: mozzarellaost, ruccola,
                         havssalt,
                         olivolja</p>
@@ -450,7 +445,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6 pad">
-                    <p>3. PARMA, 115,00 :-</p>
+                    <p class="cook64">3. PARMA, 115,00 :-</p>
                     <p>Mozzarellaost, parmaskinka, ruccola</p>
                 </div>
             </div>
@@ -461,67 +456,67 @@
             </div>
             <div class="row">
                 <div class="col-md-6 pad">
-                    <p>1. HONOLULU, 130,00 :-</p>
+                    <p class="cook65">1. HONOLULU, 130,00 :-</p>
                     <p>Skinka, räkor, ananas, banan, curry</p>
                 </div>
                 <div class="col-md-6 pad">
-                    <p>2. SAN FRANSISCO, 130,00 :-</p>
+                    <p class="cook66">2. SAN FRANSISCO, 130,00 :-</p>
                     <p>Skinka, champinjoner, färska tomater, lök, färsk paprika, oliver</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 pad">
-                    <p>3. FLORIDA, 130,00 :-</p>
+                    <p class="cook67">3. FLORIDA, 130,00 :-</p>
                     <p>Skinka, gorgonzolaost, färska tomater, lök, färsk paprika</p>
                 </div>
                 <div class="col-md-6 pad">
-                    <p>4. CHICAGO, 130,00 :-</p>
+                    <p class="cook68">4. CHICAGO, 130,00 :-</p>
                     <p>Stekt köttfärs, tacokryddmix, tacosås, jalapeño, färsk vitlök, lök</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 pad">
-                    <p>5. KANSAS, 130,00 :-</p>
+                    <p class="cook69">5. KANSAS, 130,00 :-</p>
                     <p>Skinka, färska tomater. champinjoner, salami, färsk paprika</p>
                 </div>
                 <div class="col-md-6 pad">
-                    <p>6. LAS VEGAS, 130,00 :-</p>
+                    <p class="cook70">6. LAS VEGAS, 130,00 :-</p>
                     <p>Skinka, salami, champinjoner, stekt köttfärs, färska tomater, ananas</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 pad">
-                    <p>7. TEXAS, 130,00 :-</p>
+                    <p class="cook71">7. TEXAS, 130,00 :-</p>
                     <p>Skinka, lök, färska tomater, fefferoni, kebabkött, vitlökssås</p>
                 </div>
                 <div class="col-md-6 pad">
-                    <p>8. CURRY CHICKEN, 130,00 :-</p>
+                    <p class="cook72">8. CURRY CHICKEN, 130,00 :-</p>
                     <p>Kyckling, ananas, banan, jordnötter, curry</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 pad">
-                    <p>9. ALASKA, 130,00 :-</p>
+                    <p class="cook73">9. ALASKA, 130,00 :-</p>
                     <p>Pepperonikorv, färska tomater, extra lager mozzarellaost</p>
                 </div>
                 <div class="col-md-6 pad">
-                    <p>10. ARIZONA, 130,00 :-</p>
+                    <p class="cook74">10. ARIZONA, 130,00 :-</p>
                     <p>Skinka, champinjoner, räkor, bacon, färska tomater, färsk paprika, lök</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 pad">
-                    <p>11. MONTANA, 130,00 :-</p>
+                    <p class="cook75">11. MONTANA, 130,00 :-</p>
                     <p>Oxfilé, färsk paprika, färska tomater, fefferoni, lök</p>
                 </div>
                 <div class="col-md-6 pad">
-                    <p>12. DALLAS, 130,00 :-</p>
+                    <p class="cook76">12. DALLAS, 130,00 :-</p>
                     <p>Oxfilé, champinjoner, färska tomater, bearnaisesås</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 pad">
-                    <p>13. NEW YORK, 130,00 :-</p>
+                    <p class="cook77">13. NEW YORK, 130,00 :-</p>
                     <p>Fläskfilé, champinjoner, räkor, gorgonzolaost, färsk tomat, bearnaisesås</p>
                 </div>
             </div>
@@ -532,31 +527,31 @@
             </div>
             <div class="row">
                 <div class="col-md-6 pad">
-                    <p>GARBO, 125,00 :-</p>
+                    <p class="cook78">GARBO, 125,00 :-</p>
                     <p>Parmaskinka, bresola, ruccola, parmesanost, soltorkade tomater, mozzarella</p>
                 </div>
                 <div class="col-md-6 pad">
-                    <p>CACCIOTORE, 125,00 :-</p>
+                    <p class="cook79">CACCIOTORE, 125,00 :-</p>
                     <p>Chorizo salami, färska tomater, pinjenötter, grön pesto, babyspenat</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 pad">
-                    <p>MILAN, 125,00 :-</p>
+                    <p class="cook80">MILAN, 125,00 :-</p>
                     <p>Kronärtskocka, pinjenötter, kapris, färsk basillika, parmesanost</p>
                 </div>
                 <div class="col-md-6 pad">
-                    <p>CHEVREPIZZA, 125,00 :-</p>
+                    <p class="cook81">CHEVREPIZZA, 125,00 :-</p>
                     <p>Chevreost, pinjenötter, babyspenat</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 pad">
-                    <p>MIX SALAMI, 125,00 :-</p>
+                    <p class="cook82">MIX SALAMI, 125,00 :-</p>
                     <p>Salami, peperonikorv, chorizo, basilika, mozzarella</p>
                 </div>
                 <div class="col-md-6 pad">
-                    <p>ROMA, 125,00 :-</p>
+                    <p class="cook83">ROMA, 125,00 :-</p>
                     <p>Kantarell, fläskfilé, soltorkade tomater, sparris, bearnaisesås</p>
                 </div>
             </div>
@@ -564,6 +559,190 @@
     <footer class="footer">
         Copyright © Krusboda Pizzeria 2022
     </footer>
+   
+    <script>
+        $(document).ready(function () {
+            $('.minus').click(function () {
+                var $input = $(this).parent().find('input');
+                var count = parseInt($input.val()) - 1;
+                count = count < 1 ? 1 : count;
+                $input.val(count);
+                $input.change();
+                return false;
+            });
+            $('.plus').click(function () {
+                var $input = $(this).parent().find('input');
+                $input.val(parseInt($input.val()) + 1);
+                $input.change();
+                return false;
+            });
+
+
+        });
+        /* if (navigator.cookieEnabled === false) {
+             alert("Cookies отключены!");
+         } else {
+             alert("Cookies включены!")
+         }*/
+        const doc = document.createElement('div');
+        const pop = document.querySelector('.popup');
+
+        function varukorg(pizzaNumber) {
+            //let all = document.getElementsByClassName("inp_price");
+            // let counter = 0;
+            // for (let item of all) {
+            //    console.log(item)
+            let input = document.getElementById("input" + pizzaNumber).value;
+            if (input > 0) {
+                let pizza = document.getElementsByClassName("cook" + pizzaNumber)[0].innerHTML;
+
+                let cookie = pizza + '=' + '' + input;
+
+                document.cookie = (cookie);
+            }
+        }
+
+        function basket() {
+            document.getElementById('popup').style.display = "block"
+
+            var decoded_cookie = decodeURIComponent(document.cookie);
+            var coco = decoded_cookie.split(';');
+
+            console.log(coco);
+
+            //др функция и добавить иф инпут 0 в первую функцию
+            if (document.cookie.length > 0) {
+                doc.innerHTML =
+                    `<p style="margin-top:5%; font-size:20pt"><b> Du beställer</b></p>`;
+                for (let pizzaFromBasket of coco) { //[a,b]
+                    console.log(pizzaFromBasket); //console: a
+                    //добавляем п: <div><p style="margin-top:5%; font-size:20pt"><b> Du beställer</b> </p>r</div>
+                    doc.innerHTML +=
+                        ` <table class="po"><tr><td>${pizzaFromBasket}</td>
+                            <td style="width:10%"><button><img style="width:30px" src="trash.png"></td>
+                            </tr></table>`;
+
+                    pop.appendChild(doc);
+                }
+
+                // .popup: <div><p style="margin-top:5%; font-size:20pt"><b> Du beställer</b> </p> <h3>pizzaFromBasket a</h3> <h3>pizzaFromBasket b</h3> </div>
+                /*doc.innerHTML = `<p style="margin-top:5%; font-size:20pt"><b> Du beställer</b> <p><table class="po"><tr>
+            <th>Din pizza</th>
+            <th>Belopp</th>
+                  </tr>
+                  <tr>
+           <td>${coco}</td>
+           <td>${pizza}</td>
+           <td><button><img style="width:30px" src="trash.png"></button></td>
+                  </tr></table>`;
+             pop.appendChild(doc);*/
+                document.getElementById('popImage').style.display = 'none';
+                document.getElementById('popText').style.display = 'none'
+
+            } else {
+                doc.innerHTML = `<img class="varukorgImg" src="17249115.jpg">
+            <h3 class="col-12 varukorgText">Tyvärr, <br>din varukorg är
+                tom</h3>`;
+                pop.appendChild(doc);
+                document.getElementById('popImage').style.display = 'none';
+                document.getElementById('popText').style.display = 'none'
+            }
+
+            /*function readCookie(cname) {
+                var name = cname + "=";
+                var decoded_cookie = decodeURIComponent(document.cookie);
+                var carr = decoded_cookie.split(';');
+                for (var i = 0; i < carr.length; i++) {
+                    var c = carr[i];
+                    while (c.charAt(0) == ' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }*/
+            /*function readCookie() {
+            if (document.cookie) {
+                var tmp = document.cookie.split(';')[0];
+                console.log(tmp)
+                state = tmp.split('=')[1];
+                alert(state);
+            }
+        }
+        readCookie()
+    */
+        }
+
+
+        document.addEventListener('mouseup', function (e) {
+            var container = document.getElementById('popup');
+            if (!container.contains(e.target)) {
+                container.style.display = 'none';
+            }
+        });
+
+
+
+        /* function varukorg() {
+             for (var i = 0; i > 0; i++) {
+                 var input = document.getElementById("input" + i);
+
+             }
+             //let counter = 0;
+             //let input = document.getElementsByClassName("inp_price").value
+             document.cookie = (('Margherita=' + input))
+             console.log(document.cookie)
+         } //РАБОЧИЙ ВАРИАНТ
+
+         /* let input=document.cookie = document.getElementById('input').value
+          document.cookie = (input)
+          console.log(document.cookie)*/
+
+        /*var value = document.getElementById("input").value;
+        Cookies.set('Margarita', 'value');
+        Cookies.get('Margarita', 'value')
+        // let value = document.getElementById('input').value
+        //Cookies.set('Margarita', 'value');
+        //Cookies.get('Margarita')*/
+        
+    </script>
+     <script type="text/babel">
+        
+        function App() {
+  return (
+    <div>
+      <div className="text col-md-12">
+    <h1> Meny </h1>
+</div>
+<div className="topnav">
+    <a href="index.html"> <b> Hem </b></a>
+    <div className="topnav-right">
+        <div className="big">
+            <button><a href="index.html#kontakt"> <b> ÖPPETTIDER & KONTAKT
+                    </b></a></button>
+            <button className="btn little" onClick={seeMenu}><a className="btn" href="#meny"> MENY
+                </a></button>
+            <button id="basketId"><img className="basket" src="basket.png" onClick={basket} alt="basket"/></button>
+        </div>
+        <div className="hidden">
+            <button className="btn little" onClick={seeLittleMenu}><a className="btn" href="#meny"> MENY
+                </a></button>
+            <button><img className="littleBasket" src="basket.png" onClick={basket} alt="basket"/></button>
+        </div>
+
+    </div>
+
+</div>
+
+<img className="img-fluid header" src="pizz.jpg" alt="pizza Tyreso Stockholm"/>
+    </div>
+  );
+}
+
+ReactDOM.render(<App/>, document.getElementById('root'))
+    </script>
 </body>
 
 </html>
