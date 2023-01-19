@@ -1,6 +1,5 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { LanguageContext } from "./App";
-import "./CSS_Meny.css";
 import "./little_Meny.css";
 import "./main.css";
 import basket from "./basket";
@@ -25,8 +24,6 @@ function MenuAdd() {
     }
   };
 
-  const [click, setClick] = useState(false);
-
   const [language, setLanguage] = useContext(LanguageContext);
   console.log(`language`, language);
 
@@ -36,7 +33,7 @@ function MenuAdd() {
         <div className="topnav">
           <nav className="navbar" onClick={(e) => e.stopPropagation()}>
             <li className="topnav-right">
-              <a href="">{languages[language].home}</a>
+              <a href="index.html">{languages[language].home}</a>
 
               <div className="dropdown">
                 <button onClick={myFunction} id="language" className="dropbtn">
@@ -59,10 +56,10 @@ function MenuAdd() {
             </li>
 
             <div className="right">
-              <a href="" className="m">
+              <a href="index.html" className="m">
                 {languages[language].contact}
               </a>
-              <a href="" className="m">
+              <a href="index.html" className="m">
                 {languages[language].menu}
               </a>
             </div>
