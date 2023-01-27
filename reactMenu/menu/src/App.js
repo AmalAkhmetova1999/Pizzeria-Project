@@ -1,7 +1,7 @@
 import MenuAdd from "./MenuAdd";
 import React, { useState } from "react";
 
-const defaultLanguage = "br";
+const defaultLanguage = "se";
 export const LanguageContext = React.createContext();
 
 function App() {

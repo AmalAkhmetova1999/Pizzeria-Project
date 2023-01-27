@@ -1,84 +1,32 @@
-import React, { useState, useContext } from "react";
-import { LanguageContext } from "./App";
-import "./CSS_Meny.css";
-import "./little_Meny.css";
-import "./main.css";
-import basket from "./basket";
-import myFunction from "./myFunction";
-
-function MenuAdd() {
-  const languages = {
-    en: {
-      home: "Home",
-      menu: "MENU",
-      contact: "OPENING HOURS & CONTACT"
-    },
-    se: {
-      home: "Hem",
-      menu: "MENY",
-      contact: "ÖPPETTIDER & KONTAKT"
-    },
-    ru: {
-      home: "Главная",
-      menu: "МЕНЮ",
-      contact: "ВРЕМЯ РАБОТЫ И КОНТАКТЫ"
-    }
-  };
-
-  const [click, setClick] = useState(false);
-
-  const [language, setLanguage] = useContext(LanguageContext);
-  console.log(`language`, language);
-
-  return (
-    <>
-      <div>
-        <div className="topnav">
-          <nav className="navbar" onClick={(e) => e.stopPropagation()}>
-            <li className="topnav-right">
-              <a href="">{languages[language].home}</a>
-
-              <div className="dropdown">
-                <button onClick={myFunction} id="language" className="dropbtn">
-                  <img
-                    className="language"
-                    src={require("./language.png")}
-                    alt=""
-                  />
-                </button>
-                <div id="myDropdown" className="dropdown-content">
-                  <button value="en" id="en" onClick={() => setLanguage("en")}>
-                    EN
-                  </button>
-                  <button value="se" id="se" onClick={() => setLanguage("se")}>
-                    SE
-                  </button>
-                  <button onClick={() => setLanguage("ru")}>RU</button>
-                </div>
-              </div>
-            </li>
-
-            <div className="right">
-              <a href="" className="m">
-                {languages[language].contact}
-              </a>
-              <a href="" className="m">
-                {languages[language].menu}
-              </a>
-            </div>
-            <button id="basketId">
-              <img
-                className="basket"
-                src={require("./basket.png")}
-                alt=""
-                onClick={basket}
-              />
-            </button>
-          </nav>
+import React from "react";
+ function MenuAdd(){
+    return(
+<section>
+<div class="text col-md-12">
+    <h1> Meny </h1>
+</div>
+<div class="topnav">
+    <a href="index.html" style="font-size: 12pt;"> <b> Hem </b></a>
+    <div class="topnav-right">
+        <div class="big">
+            <button><a href="index.html#kontakt"> <b> ÖPPETTIDER & KONTAKT
+                    </b></a></button>
+            <button class="btn little" onclick="seeMenu()"><a class="btn" href="#meny"> MENY
+                </a></button>
+            <button id="basketId"><img class="basket" src="basket.png" onclick="basket()"/></button>
         </div>
-      </div>
-    </>
-  );
-}
+        <div class="hidden">
+            <button class="btn little" onclick="seeLittleMenu()"><a class="btn" href="#meny"> MENY
+                </a></button>
+            <button><img class=" littleBasket" src="basket.png" onclick="basket()"/></button>
+        </div>
 
-export default MenuAdd;
+    </div>
+
+</div>
+
+<img class="img-fluid header" src="pizz.jpg" alt="pizza Tyreso Stockholm"/>
+
+
+</section>)}
+export default MenuAdd

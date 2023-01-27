@@ -33,7 +33,7 @@ function MenuAdd() {
         <div className="topnav">
           <nav className="navbar" onClick={(e) => e.stopPropagation()}>
             <li className="topnav-right">
-              <a href="index.html">{languages[language].home}</a>
+              <a style={{fontSize:'14pt'}} href="index.html">{languages[language].home}</a>
 
               <div className="dropdown">
                 <button onClick={myFunction} id="language" className="dropbtn">
@@ -55,13 +55,15 @@ function MenuAdd() {
               </div>
             </li>
 
-            <div className="right">
+            <div className="topnav-right">
+              <div className="right">
               <a href="index.html" className="m">
                 {languages[language].contact}
               </a>
               <a href="index.html" className="m">
                 {languages[language].menu}
               </a>
+              </div>
             </div>
             <button id="basketId">
               <img
